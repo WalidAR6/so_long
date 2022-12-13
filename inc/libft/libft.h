@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:22:43 by waraissi         ###   ########.fr       */
+/*   Created: 2022/12/13 13:28:56 by waraissi          #+#    #+#             */
+/*   Updated: 2022/12/13 16:26:17 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include <mlx.h>
+# include <stdio.h>
 # include <stdlib.h>
-# include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
 
-typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-}				t_data;
+char	*ft_strchr(char *str, int c);
+char	*ft_strjoin(char *s1, char *s2);
+size_t	ft_strlen(char *str);
+char	**ft_split(char *s, char c);
+size_t	ft_strlcpy(char *dst, char *src, size_t n);
+char	*ft_strdup(char *str);
 
 # endif

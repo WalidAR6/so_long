@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:22:43 by waraissi         ###   ########.fr       */
+/*   Created: 2022/12/13 16:25:26 by waraissi          #+#    #+#             */
+/*   Updated: 2022/12/13 16:25:35 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include <mlx.h>
-# include <stdlib.h>
-# include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
+char	*ft_strdup(char *str)
+{
+	char	*p;
 
-typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-}				t_data;
-
-# endif
+	p = malloc((ft_strlen(str) + 1) * sizeof(char));
+	if (!p)
+		return (NULL);
+	ft_strlcpy(p, str, ft_strlen(str) + 1);
+	return (p);
+}

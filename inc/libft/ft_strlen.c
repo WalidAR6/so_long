@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:22:43 by waraissi         ###   ########.fr       */
+/*   Created: 2022/12/13 16:09:03 by waraissi          #+#    #+#             */
+/*   Updated: 2022/12/13 16:24:24 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include <mlx.h>
-# include <stdlib.h>
-# include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
 
-typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-}				t_data;
-
-# endif
+	i = 0;
+    if(!str)
+        return (0);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

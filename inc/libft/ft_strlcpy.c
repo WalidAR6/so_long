@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 19:22:43 by waraissi         ###   ########.fr       */
+/*   Created: 2022/12/13 16:23:21 by waraissi          #+#    #+#             */
+/*   Updated: 2022/12/13 16:23:27 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include <mlx.h>
-# include <stdlib.h>
-# include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
+size_t	ft_strlcpy(char *dst, char *src, size_t n)
+{
+	size_t	i;
 
-typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-}				t_data;
-
-# endif
+	if (dst == NULL || n == 0)
+		return (ft_strlen(src));
+	i = 0;
+	while (src[i] && i < n - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}

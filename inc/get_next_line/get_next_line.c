@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:04:30 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/12 17:12:26 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:35:41 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ char	*get_next_line(int fd)
 		if (i == -1)
 			return (free(backup), free(buffer), backup = NULL, NULL);
 		buffer[i] = '\0';
-		backup = ft_strjoin(backup, buffer);
+		backup = ft_strjoin_and_free(backup, buffer);
 	}
 	line = before_newline(backup);
 	backup = after_newline(backup);
