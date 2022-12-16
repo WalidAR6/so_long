@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/15 16:33:59 by waraissi         ###   ########.fr       */
+/*   Created: 2022/12/16 12:44:18 by waraissi          #+#    #+#             */
+/*   Updated: 2022/12/16 12:49:24 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-# include <mlx.h>
-# include <stdlib.h>
-# include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
+char	*ft_strrchr(char *str, int c)
+{
+	size_t	i;
 
-typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-	int width;
-	int height;
-}				t_data;
-
-# endif
+	i = ft_strlen(str);
+	while (i > 0)
+	{
+		if (str[i] == (char)c)
+			return (str + i);
+		i--;
+	}
+	if (str[i] == (char)c)
+		return (str);
+	return (NULL);
+}

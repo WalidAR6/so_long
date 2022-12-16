@@ -12,7 +12,9 @@ SRC = so_long.c\
 		inc/libft/ft_strjoin.c\
 		inc/libft/ft_split.c\
 		inc/libft/ft_strlcpy.c\
-		inc/libft/ft_strdup.c
+		inc/libft/ft_strdup.c\
+		inc/libft/ft_strrchr.c
+
 
 OBJ = ${SRC:.c=.o}
 

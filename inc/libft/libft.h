@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:28:56 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 16:26:17 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:48:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ size_t	ft_strlen(char *str);
 char	**ft_split(char *s, char c);
 size_t	ft_strlcpy(char *dst, char *src, size_t n);
 char	*ft_strdup(char *str);
+char	*ft_strrchr(char *str, int c);
 
 # endif
