@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/17 11:49:25 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/17 23:12:46 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,35 @@ char **surrounded_map(char **matrix)
         j = 0;
         while (matrix[i][j])
         {
-            if (matrix[i][0] == '1' && matrix[i][len] == '1')
-                printf("%c",matrix[i][j]);
-            else
+            if (matrix[i][0] == '0' || matrix[i][len] == '0')
             {
-                printf("Error");
+                printf("Error found 0 in borders");
                 exit(1);
-            }            
+            }          
             j++;
         }
-        printf("\n");
         i++;
     }
     return (matrix);
 }
 
+int same_lenght(char **matrix)
+{
+    size_t len;
+    int i;
+    int j;
+
+    len = ft_strlen(matrix[0]);
+    i = 1;
+    j = 0;
+    while (matrix[i])
+    {
+        if (ft_strlen(matrix[i]) != len)
+            j++;
+        i++;
+    }
+    return (j);
+}
 char **read_map(int fd)
 {
     char *get_lines;
@@ -75,6 +89,11 @@ char **read_map(int fd)
             data.P = data.P + 1;
         else if (lines[i] == 'E')
             data.E = data.E + 1;
+        else if (!ft_strchr("10ECP\n", lines[i]))
+        {
+            printf("Error found other char");
+            exit(1);
+        }
         i++;
     }
     if (data.P != 1 || data.E != 1 || data.C < 1)
@@ -83,10 +102,13 @@ char **read_map(int fd)
         exit(1);
     }
     matrix = ft_split(lines,'\n');
+    if (same_lenght(matrix) != 0)
+    {
+        printf("Not the same lenght");
+        exit(1);
+    }
     surrounded_map(matrix);
-    // func
     data.height = map_height(matrix);
-    printf("%d\n",data.height);
     if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[data.height - 1],'0'))
         return (write(1, "Error (found 0)\n", 17), NULL);
     return matrix;
@@ -96,15 +118,15 @@ int main()
 {
     int fd;
     char **rm;
-    // int i = 0;
+    int i = 0;
 
     fd = open("./maps/map.ber",O_RDONLY);
     rm = read_map(fd);
-    // while (i < 5)
-    // {
-    //     printf("%s\n",rm[i]);
-    //     i++;
-    // }
+    while (i < 5)
+    {
+        printf("%s\n",rm[i]);
+        i++;
+    }
     
     close(fd);
 }

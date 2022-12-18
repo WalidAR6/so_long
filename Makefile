@@ -31,3 +31,5 @@ clean:
 
 fclean:
 	rm -f ${OBJ} ${NAME}
+
+re: fclean all
