@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/17 23:12:46 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/19 23:16:43 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int same_lenght(char **matrix)
     }
     return (j);
 }
+
 char **read_map(int fd)
 {
     char *get_lines;
@@ -68,8 +69,11 @@ char **read_map(int fd)
     t_data  data;
     char **matrix;
     int i;
+    int n_l;
+    int first_line_len;
 
     i = 0;
+    n_l = 0;
     lines = NULL;
     data.C = 0;
     data.E = 0;
@@ -79,6 +83,29 @@ char **read_map(int fd)
         get_lines = get_next_line(fd);
         if (get_lines == NULL)
             break;
+        if (n_l == 0)
+        {
+            first_line_len = ft_strlen(get_lines);
+            n_l++;
+        }
+        else
+            n_l++;
+        if (get_lines[ft_strlen(get_lines) - 1] != '\n')
+        {
+            if (ft_strlen(get_lines) != (size_t)first_line_len - 1)
+            {
+                printf("not same len\n");
+                exit(1);
+            }
+        }
+        else
+        {
+            if (ft_strlen(get_lines) != (size_t)first_line_len)
+            {
+                printf("not same len\n");
+                exit(1);
+            }
+        }
         lines = ft_strjoin(lines,get_lines);
     }
     while (lines[i])
@@ -98,13 +125,13 @@ char **read_map(int fd)
     }
     if (data.P != 1 || data.E != 1 || data.C < 1)
     {
-        write(1, "Error ok",9);
+        write(2, "Error ok\n",10);
         exit(1);
     }
     matrix = ft_split(lines,'\n');
     if (same_lenght(matrix) != 0)
     {
-        printf("Not the same lenght");
+        printf("Not the same lenght\n");
         exit(1);
     }
     surrounded_map(matrix);
@@ -118,15 +145,10 @@ int main()
 {
     int fd;
     char **rm;
-    int i = 0;
-
+    
     fd = open("./maps/map.ber",O_RDONLY);
     rm = read_map(fd);
-    while (i < 5)
-    {
-        printf("%s\n",rm[i]);
-        i++;
-    }
+    game_start();
     
     close(fd);
 }
