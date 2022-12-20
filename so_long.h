@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/19 23:14:23 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/20 20:40:33 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ typedef struct	s_data   {
 typedef struct s_vars	{
 	void *ptr;
 	void *win;
-}				t_infos;
+	void *wall;
+	void *floor;
+	int width;
+	int height;
+}				t_vars;
 
 char **read_map(int fd);
 int same_lenght(char **matrix);

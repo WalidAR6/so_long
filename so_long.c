@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/19 23:16:43 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:35:21 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ char **read_map(int fd)
     data.height = map_height(matrix);
     if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[data.height - 1],'0'))
         return (write(1, "Error (found 0)\n", 17), NULL);
-    return matrix;
+    return (matrix);
 }
 
 int main()
@@ -148,7 +148,6 @@ int main()
     
     fd = open("./maps/map.ber",O_RDONLY);
     rm = read_map(fd);
-    game_start();
-    
+    game_start(rm);
     close(fd);
 }
