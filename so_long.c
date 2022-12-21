@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/21 16:32:53 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:35:40 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ char **read_map(int fd)
         }
         i++;
     }
+    printf("%d\n",data.C);
     if (data.P != 1 || data.E != 1 || data.C < 1)
     {
         write(2, "Error ok\n",10);

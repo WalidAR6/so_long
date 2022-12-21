@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/21 18:44:01 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/21 23:15:28 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    move_right(t_vars *par)
 {
-    if (par->matrix[par->y][par->x + 1] != '1')
+    if (par->matrix[par->y][par->x + 1] != '1' && par->matrix[par->y][par->x + 1] != 'E')
     {
         par->matrix[par->y][par->x] = '0';
         par->matrix[par->y][par->x + 1] = 'P';
@@ -25,7 +25,7 @@ void    move_right(t_vars *par)
 
 void    move_left(t_vars *par)
 {
-    if (par->matrix[par->y][par->x - 1] != '1')
+    if (par->matrix[par->y][par->x - 1] != '1' && par->matrix[par->y][par->x - 1] != 'E')
     {
         par->matrix[par->y][par->x] = '0';
         par->matrix[par->y][par->x - 1] = 'P';
@@ -36,7 +36,7 @@ void    move_left(t_vars *par)
 
 void    move_up(t_vars  *par)
 {
-    if (par->matrix[par->y - 1][par->x] != '1')
+    if (par->matrix[par->y - 1][par->x] != '1' && par->matrix[par->y - 1][par->x] != 'E')
     {
         par->matrix[par->y][par->x] = '0';
         par->matrix[par->y - 1][par->x] = 'P';
@@ -47,7 +47,7 @@ void    move_up(t_vars  *par)
 
 void    move_down(t_vars *par)
 {
-    if (par->matrix[par->y + 1][par->x] != '1')
+    if (par->matrix[par->y + 1][par->x] != '1' && par->matrix[par->y + 1][par->x] != 'E')
     {
         par->matrix[par->y][par->x] = '0';
         par->matrix[par->y + 1][par->x] = 'P';

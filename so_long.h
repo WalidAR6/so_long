@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/21 18:42:27 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/21 22:27:09 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,34 @@
 # define KEY_ESC 53
 
 typedef struct	s_data   {
-	int	P;
-	int C;
-	int E;
-	int width;
-	int height;
+	int		P;
+	int 	C;
+	int 	E;
+	int 	width;
+	int 	height;
 }				t_data;
 
 typedef struct s_vars	{
-	void *ptr;
-	void *win;
-	void *wall;
-	void *player;
-	int width;
-	int height;
-	int x;
-	int y;
-	char **matrix;
+	void 	*ptr;
+	void 	*win;
+	void 	*wall;
+	void 	*player;
+	void 	*food;
+	void	*door;
+	int 	width;
+	int 	height;
+	int 	x;
+	int 	y;
+	char 	**matrix;
 }				t_vars;
 
-char **read_map(int fd);
-int same_lenght(char **matrix);
-char **surrounded_map(char **matrix);
-int map_height(char **matrix);
-void game_start();
-int get_x_index(char **matrix, char c);
-int get_y_index(char **matrix, char c);
+char 	**read_map(int fd);
+int 	same_lenght(char **matrix);
+char 	**surrounded_map(char **matrix);
+int 	map_height(char **matrix);
+void 	game_start();
+int 	get_x_index(char **matrix, char c);
+int 	get_y_index(char **matrix, char c);
 void	move_right(t_vars *par);
 void	move_left(t_vars *par);
 void	move_up(t_vars *par);
