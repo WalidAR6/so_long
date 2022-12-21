@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/20 18:35:21 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/21 16:32:53 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,12 @@ char **read_map(int fd)
 int main()
 {
     int fd;
-    char **rm;
+    t_vars  vars;
     
     fd = open("./maps/map.ber",O_RDONLY);
-    rm = read_map(fd);
-    game_start(rm);
+    vars.matrix = read_map(fd);
+    vars.x = get_x_index(vars.matrix, 'P');
+    vars.y = get_y_index(vars.matrix, 'P');
+    game_start(&vars);
     close(fd);
 }

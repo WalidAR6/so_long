@@ -6,6 +6,8 @@ NAME = solong
 
 SRC = so_long.c\
 		game.c\
+		utils.c\
+		key_hooks.c\
 		inc/get_next_line/get_next_line.c\
 		inc/get_next_line/get_next_line_utils.c\
 		inc/libft/ft_strchr.c\
