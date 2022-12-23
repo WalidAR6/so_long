@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/21 23:35:40 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/23 16:29:26 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,10 @@ int same_lenght(char **matrix)
     return (j);
 }
 
-char **read_map(int fd)
+char **read_map(int fd, t_vars *vars)
 {
     char *get_lines;
     char *lines;
-    t_data  data;
     char **matrix;
     int i;
     int n_l;
@@ -75,9 +74,9 @@ char **read_map(int fd)
     i = 0;
     n_l = 0;
     lines = NULL;
-    data.C = 0;
-    data.E = 0;
-    data.P = 0;
+    vars->data.C = 0;
+    vars->data.E = 0;
+    vars->data.P = 0;
     while (1)
     {
         get_lines = get_next_line(fd);
@@ -111,11 +110,11 @@ char **read_map(int fd)
     while (lines[i])
     {
         if (lines[i] == 'C')
-            data.C = data.C + 1;
+            vars->data.C = vars->data.C + 1;
         else if (lines[i] == 'P')
-            data.P = data.P + 1;
+            vars->data.P = vars->data.P + 1;
         else if (lines[i] == 'E')
-            data.E = data.E + 1;
+            vars->data.E = vars->data.E + 1;
         else if (!ft_strchr("10ECP\n", lines[i]))
         {
             printf("Error found other char");
@@ -123,8 +122,7 @@ char **read_map(int fd)
         }
         i++;
     }
-    printf("%d\n",data.C);
-    if (data.P != 1 || data.E != 1 || data.C < 1)
+    if (vars->data.P != 1 || vars->data.E != 1 || vars->data.C < 1)
     {
         write(2, "Error ok\n",10);
         exit(1);
@@ -136,8 +134,8 @@ char **read_map(int fd)
         exit(1);
     }
     surrounded_map(matrix);
-    data.height = map_height(matrix);
-    if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[data.height - 1],'0'))
+    vars->data.height = map_height(matrix);
+    if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[vars->data.height - 1],'0'))
         return (write(1, "Error (found 0)\n", 17), NULL);
     return (matrix);
 }
@@ -148,7 +146,7 @@ int main()
     t_vars  vars;
     
     fd = open("./maps/map.ber",O_RDONLY);
-    vars.matrix = read_map(fd);
+    vars.matrix = read_map(fd, &vars);
     vars.x = get_x_index(vars.matrix, 'P');
     vars.y = get_y_index(vars.matrix, 'P');
     game_start(&vars);

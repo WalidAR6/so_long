@@ -8,6 +8,7 @@ SRC = so_long.c\
 		game.c\
 		utils.c\
 		key_hooks.c\
+		valide_path.c\
 		inc/get_next_line/get_next_line.c\
 		inc/get_next_line/get_next_line_utils.c\
 		inc/libft/ft_strchr.c\
@@ -26,7 +27,7 @@ all: ${NAME}
 %.o: %.c
 	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJ} so_long.h
 	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 clean:

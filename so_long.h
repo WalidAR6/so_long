@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/21 22:27:09 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:32:01 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,24 @@ typedef struct s_vars	{
 	void 	*ptr;
 	void 	*win;
 	void 	*wall;
-	void 	*player;
+	void 	*default_player;
+	void	*player_right;
+	void	*player_up;
+	void	*player_down;
+	void	*player_left;
 	void 	*food;
-	void	*door;
+	void	*door_open;
+	void	*door_closed;
 	int 	width;
 	int 	height;
 	int 	x;
 	int 	y;
 	char 	**matrix;
+	t_data	data;
 }				t_vars;
 
-char 	**read_map(int fd);
+
+char 	**read_map(int fd, t_vars *vars);
 int 	same_lenght(char **matrix);
 char 	**surrounded_map(char **matrix);
 int 	map_height(char **matrix);
