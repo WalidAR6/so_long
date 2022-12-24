@@ -28,7 +28,7 @@ all: ${NAME}
 	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
 
 ${NAME}: ${OBJ} so_long.h
-	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -fsanitize=address -g
 
 clean:
 	rm -f ${OBJ}

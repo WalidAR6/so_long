@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/23 16:29:26 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/24 22:42:19 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,18 +128,31 @@ char **read_map(int fd, t_vars *vars)
         exit(1);
     }
     matrix = ft_split(lines,'\n');
+    vars->height = map_height(matrix);
     if (same_lenght(matrix) != 0)
     {
         printf("Not the same lenght\n");
         exit(1);
     }
     surrounded_map(matrix);
-    vars->data.height = map_height(matrix);
-    if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[vars->data.height - 1],'0'))
+    if(ft_strchr(matrix[0],'0') || ft_strchr(matrix[vars->height - 1],'0'))
         return (write(1, "Error (found 0)\n", 17), NULL);
     return (matrix);
 }
 
+void    copy_map(t_vars *vars)
+{
+    int i;
+
+    i = 0;
+    vars->matrix_backup = malloc((vars->height + 1) * sizeof(char *));
+    while (i < vars->height)
+    {
+        vars->matrix_backup[i] = ft_strdup(vars->matrix[i]);
+        i++;
+    }
+    vars->matrix_backup[i] = NULL;
+}
 int main()
 {
     int fd;
@@ -147,8 +160,15 @@ int main()
     
     fd = open("./maps/map.ber",O_RDONLY);
     vars.matrix = read_map(fd, &vars);
+    copy_map(&vars);
     vars.x = get_x_index(vars.matrix, 'P');
     vars.y = get_y_index(vars.matrix, 'P');
+    find_path(&vars, vars.x, vars.y);
+    if (check_condition(&vars) == 1)
+    {
+        printf("error path not valid");
+        exit(1);
+    }
     game_start(&vars);
     close(fd);
 }
