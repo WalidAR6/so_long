@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/23 18:32:51 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/24 23:20:10 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    move_right(t_vars *par)
     par->default_player = par->player_right;
     if (par->matrix[par->y][par->x + 1] == 'E' && par->data.C == 0)
     {
-        printf("game over\n");
+        put_game_won();
         exit(1);
     }
     else if (par->matrix[par->y][par->x + 1] != '1' && par->matrix[par->y][par->x + 1] != 'E')
@@ -35,7 +35,7 @@ void    move_left(t_vars *par)
     par->default_player = par->player_left;
     if (par->matrix[par->y][par->x - 1] == 'E' && par->data.C == 0)
     {
-        printf("game over\n");
+        put_game_won();
         exit(1);
     }
     else if (par->matrix[par->y][par->x - 1] != '1' && par->matrix[par->y][par->x - 1] != 'E')
@@ -53,7 +53,7 @@ void    move_up(t_vars  *par)
     par->default_player = par->player_up;
     if (par->matrix[par->y - 1][par->x] == 'E' && par->data.C == 0)
     {
-        printf("game over\n");
+        put_game_won();
         exit(1);
     }
     else if (par->matrix[par->y - 1][par->x] != '1' && par->matrix[par->y - 1][par->x] != 'E')
@@ -71,7 +71,7 @@ void    move_down(t_vars *par)
     par->default_player = par->player_down;
     if (par->matrix[par->y + 1][par->x] == 'E' && par->data.C == 0)
     {
-        printf("game over\n");
+        put_game_won();
         exit(1);
     }
     else if (par->matrix[par->y + 1][par->x] != '1' && par->matrix[par->y + 1][par->x] != 'E')

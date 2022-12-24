@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/24 22:38:28 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/24 23:20:26 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	move_down(t_vars *par);
 void	window_exit(t_vars *par);
 void    find_path(t_vars *vars, int x, int y);
 int		check_condition(t_vars *vars);
+void	put_game_won();
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 16:32:42 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/24 22:43:20 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/24 23:14:36 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int check_condition(t_vars *vars)
                 return (1);
             if (vars->matrix_backup[i][j] == 'E')
             {
-                if (vars->matrix_backup[i + 1][j] != 'a' && \
-                    vars->matrix_backup[i - 1][j] != 'a' && \
-                    vars->matrix_backup[i][j + 1] != 'a' && \
+                if (vars->matrix_backup[i + 1][j] != 'a' &&
+                    vars->matrix_backup[i - 1][j] != 'a' &&
+                    vars->matrix_backup[i][j + 1] != 'a' &&
                     vars->matrix_backup[i][j - 1] != 'a')
                     return (1);
             }
