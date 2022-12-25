@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/24 23:19:43 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/25 23:32:34 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,34 @@ int get_y_index(char **matrix, char c)
         i++;
     }
     return (0);
+}
+
+int map_height(char **matrix)
+{
+    int i;
+
+    i = 0;
+    while (matrix[i])
+        i++;
+    return (i);
+}
+
+int same_lenght(char **matrix)
+{
+    size_t len;
+    int i;
+    int j;
+
+    len = ft_strlen(matrix[0]);
+    i = 1;
+    j = 0;
+    while (matrix[i])
+    {
+        if (ft_strlen(matrix[i]) != len)
+            j++;
+        i++;
+    }
+    return (j);
 }
 
 void    put_game_won()

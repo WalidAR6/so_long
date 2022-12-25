@@ -9,6 +9,7 @@ SRC = so_long.c\
 		utils.c\
 		key_hooks.c\
 		valide_path.c\
+		so_long_utils.c\
 		inc/get_next_line/get_next_line.c\
 		inc/get_next_line/get_next_line_utils.c\
 		inc/libft/ft_strchr.c\
