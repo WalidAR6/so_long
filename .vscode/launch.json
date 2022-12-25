@@ -8,14 +8,15 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/waraissi/Desktop/so_long/solong",
-            "args": [],
+            "program": "${workspaceFolder}/solong",
+            "args": ["/map/map.ber"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb"
         }
+        
 
     ]
 }
