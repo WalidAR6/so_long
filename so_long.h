@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/25 23:35:15 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:26:23 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ typedef struct s_vars	{
 	void 	*ptr;
 	void 	*win;
 	void 	*wall;
-	void 	*default_player;
-	void	*player_right;
-	void	*player_up;
-	void	*player_down;
-	void	*player_left;
+	void 	*d_p;
+	void	*p_r;
+	void	*p_u;
+	void	*p_d;
+	void	*p_l;
 	void 	*food;
-	void	*door_open;
-	void	*door_closed;
+	void	*d_o;
+	void	*d_c;
 	int 	width;
 	int 	height;
 	int 	x;
