@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 18:15:49 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 22:54:14 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,13 @@ char	**read_map(int fd, t_vars *vars)
 	vars->height = map_height(matrix);
 	surrounded_map(matrix);
 	look_in_sides(vars, matrix);
-	return (matrix);
+	return (free(lines), matrix);
 }
 
 void	check_main(char *av)
 {
 	int		fd;
+	void	*copy;
 	t_vars	vars;
 
 	fd = open(av, O_RDONLY);
@@ -86,7 +87,7 @@ void	check_main(char *av)
 		exit(1);
 	}
 	vars.matrix = read_map(fd, &vars);
-	copy_map(&vars);
+	copy = copy_map(&vars);
 	vars.x = get_x_index(vars.matrix, 'P');
 	vars.y = get_y_index(vars.matrix, 'P');
 	find_path(&vars, vars.x, vars.y);
@@ -96,6 +97,7 @@ void	check_main(char *av)
 		exit(1);
 	}
 	game_start(&vars);
+	free(copy);
 	close(fd);
 }
 

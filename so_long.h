@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 18:26:51 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 22:44:32 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	map_elements(t_vars *vars, char *lines);
 void	check_map_len(int first_line_len, char *get_lines);
 char	*map_len(int fd, char **lines);
 char	**read_map(int fd, t_vars *vars);
-void	copy_map(t_vars *vars);
+void	*copy_map(t_vars *vars);
 void	put_game_won(void);
 
 #endif

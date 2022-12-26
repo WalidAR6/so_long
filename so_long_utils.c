@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 23:28:15 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 18:26:04 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 22:44:50 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,19 @@ void	map_elements(t_vars *vars, char *lines)
 	}
 }
 
-void	copy_map(t_vars *vars)
+void	*copy_map(t_vars *vars)
 {
 	int	i;
 
 	i = 0;
 	vars->matrix_backup = malloc((vars->height + 1) * sizeof(char *));
+	if (!vars->matrix_backup)
+		return (NULL);
 	while (i < vars->height)
 	{
 		vars->matrix_backup[i] = ft_strdup(vars->matrix[i]);
 		i++;
 	}
 	vars->matrix_backup[i] = NULL;
+	return (vars->matrix_backup);
 }
