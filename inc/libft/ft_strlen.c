@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:09:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 16:24:24 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:34:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlen(char *str)
 	size_t	i;
 
 	i = 0;
-    if(!str)
-        return (0);
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 	{
 		i++;

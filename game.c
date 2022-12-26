@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 16:28:08 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:27:18 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	textures(t_vars *var, char c, int i, int j)
 			var->food, j * var->width, i * var->width);
 	else if (c == 'E')
 	{
-		if (var->data.C != 0)
+		if (var->data.c != 0)
 			mlx_put_image_to_window(var->ptr, var->win,
 				var->d_c, j * var->width, i * var->width);
 		else

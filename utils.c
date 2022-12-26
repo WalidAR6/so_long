@@ -6,79 +6,79 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/25 23:32:34 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:30:29 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int get_x_index(char **matrix, char c)
+int	get_x_index(char **matrix, char c)
 {
-    size_t i;
-    size_t j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    while (matrix[i])
-    {
-        j = 0;
-        while (++j < ft_strlen(matrix[i]) - 1)
-            if (matrix[i][j] == c)
-                return (j);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (matrix[i])
+	{
+		j = 0;
+		while (++j < ft_strlen(matrix[i]) - 1)
+			if (matrix[i][j] == c)
+				return (j);
+		i++;
+	}
+	return (0);
 }
 
-int get_y_index(char **matrix, char c)
+int	get_y_index(char **matrix, char c)
 {
-    size_t i;
-    size_t j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    while (matrix[i])
-    {
-        j = 0;
-        while (++j < ft_strlen(matrix[i]) - 1)
-            if (matrix[i][j] == c)
-                return (i);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (matrix[i])
+	{
+		j = 0;
+		while (++j < ft_strlen(matrix[i]) - 1)
+			if (matrix[i][j] == c)
+				return (i);
+		i++;
+	}
+	return (0);
 }
 
-int map_height(char **matrix)
+int	map_height(char **matrix)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (matrix[i])
-        i++;
-    return (i);
+	i = 0;
+	while (matrix[i])
+		i++;
+	return (i);
 }
 
-int same_lenght(char **matrix)
+int	same_lenght(char **matrix)
 {
-    size_t len;
-    int i;
-    int j;
+	size_t	len;
+	int		i;
+	int		j;
 
-    len = ft_strlen(matrix[0]);
-    i = 1;
-    j = 0;
-    while (matrix[i])
-    {
-        if (ft_strlen(matrix[i]) != len)
-            j++;
-        i++;
-    }
-    return (j);
+	len = ft_strlen(matrix[0]);
+	i = 1;
+	j = 0;
+	while (matrix[i])
+	{
+		if (ft_strlen(matrix[i]) != len)
+			j++;
+		i++;
+	}
+	return (j);
 }
 
-void    put_game_won()
+void	put_game_won(void)
 {
-        printf(" _   _    __        __   ___    _   _ \n");
-        printf("| | | |   \\ \\      / /  / _ \\  | \\ | |\n");
-        printf("| | | |    \\ \\ /\\ / /  | | | | |  \\| |\n");
-        printf("| |_| |     \\ V  V /   | |_| | | |\\  |\n");
-        printf(" \\___/       \\_/\\_/     \\___/  |_| \\_|\n");
+	printf(" _   _    __        __   ___    _   _ \n");
+	printf("| | | |   \\ \\      / /  / _ \\  | \\ | |\n");
+	printf("| | | |    \\ \\ /\\ / /  | | | | |  \\| |\n");
+	printf("| |_| |     \\ V  V /   | |_| | | |\\  |\n");
+	printf(" \\___/       \\_/\\_/     \\___/  |_| \\_|\n");
 }

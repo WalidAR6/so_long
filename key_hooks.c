@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 16:32:15 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:28:30 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	move_right(t_vars *par)
 {
 	par->d_p = par->p_r;
-	if (par->matrix[par->y][par->x + 1] == 'E' && par->data.C == 0)
+	if (par->matrix[par->y][par->x + 1] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
 		exit(1);
@@ -24,7 +24,7 @@ void	move_right(t_vars *par)
 		par->matrix[par->y][par->x + 1] != 'E')
 	{
 		if (par->matrix[par->y][par->x + 1] == 'C')
-			par->data.C = par->data.C - 1;
+			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y][par->x + 1] = 'P';
 		par->x++;
@@ -34,7 +34,7 @@ void	move_right(t_vars *par)
 void	move_left(t_vars *par)
 {
 	par->d_p = par->p_l;
-	if (par->matrix[par->y][par->x - 1] == 'E' && par->data.C == 0)
+	if (par->matrix[par->y][par->x - 1] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
 		exit(1);
@@ -43,7 +43,7 @@ void	move_left(t_vars *par)
 		par->matrix[par->y][par->x - 1] != 'E')
 	{
 		if (par->matrix[par->y][par->x - 1] == 'C')
-			par->data.C = par->data.C - 1;
+			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y][par->x - 1] = 'P';
 		par->x--;
@@ -53,7 +53,7 @@ void	move_left(t_vars *par)
 void	move_up(t_vars *par)
 {
 	par->d_p = par->p_u;
-	if (par->matrix[par->y - 1][par->x] == 'E' && par->data.C == 0)
+	if (par->matrix[par->y - 1][par->x] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
 		exit(1);
@@ -62,7 +62,7 @@ void	move_up(t_vars *par)
 		par->matrix[par->y - 1][par->x] != 'E')
 	{
 		if (par->matrix[par->y - 1][par->x] == 'C')
-			par->data.C = par->data.C - 1;
+			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y - 1][par->x] = 'P';
 		par->y--;
@@ -72,7 +72,7 @@ void	move_up(t_vars *par)
 void	move_down(t_vars *par)
 {
 	par->d_p = par->p_d;
-	if (par->matrix[par->y + 1][par->x] == 'E' && par->data.C == 0)
+	if (par->matrix[par->y + 1][par->x] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
 		exit(1);
@@ -81,7 +81,7 @@ void	move_down(t_vars *par)
 		par->matrix[par->y + 1][par->x] != 'E')
 	{
 		if (par->matrix[par->y + 1][par->x] == 'C')
-			par->data.C = par->data.C - 1;
+			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y + 1][par->x] = 'P';
 		par->y++;

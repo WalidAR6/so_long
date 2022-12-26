@@ -6,52 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:05:21 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/13 16:35:40 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:33:33 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-// size_t	ft_strlen(char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (!str)
-// 		return (0);
-// 	while (str[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
-
-// size_t	ft_strlcpy(char *dst, char *src, size_t n)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (dst == NULL || n == 0)
-// 		return (ft_strlen(src));
-// 	while (src[i] && i < n - 1)
-// 	{
-// 		dst[i] = src[i];
-// 		i++;
-// 	}
-// 	dst[i] = '\0';
-// 	return (ft_strlen(src));
-// }
-
-// char	*ft_strdup(char *str)
-// {
-// 	char	*p;
-
-// 	p = malloc((ft_strlen(str) + 1) * sizeof(char));
-// 	if (!p)
-// 		return (NULL);
-// 	ft_strlcpy(p, str, ft_strlen(str) + 1);
-// 	return (p);
-// }
 
 char	*ft_strjoin_and_free(char *s1, char *s2)
 {
