@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:29:18 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:34:38 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,4 @@ int	same_lenght(char **matrix)
 		i++;
 	}
 	return (j);
-}
-
-void	put_game_won(void)
-{
-	ft_putstr_fd(" _   _    __        __   ___    _   _ \n", 1);
-	ft_putstr_fd("| | | |   \\ \\      / /  / _ \\  | \\ | |\n", 1);
-	ft_putstr_fd("| | | |    \\ \\ /\\ / /  | | | | |  \\| |\n", 1);
-	ft_putstr_fd("| |_| |     \\ V  V /   | |_| | | |\\  |\n", 1);
-	ft_putstr_fd(" \\___/       \\_/\\_/     \\___/  |_| \\_|\n", 1);
 }

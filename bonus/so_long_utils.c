@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 23:28:15 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:28:49 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:17:38 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	map_elements(t_vars *vars, char *lines)
 			vars->data.p = vars->data.p + 1;
 		else if (lines[i] == 'E')
 			vars->data.e = vars->data.e + 1;
-		else if (!ft_strchr("10ECP\n", lines[i]))
+		else if (!ft_strchr("10ECPG\n", lines[i]))
 		{
 			ft_putstr_fd("Error found other char\n", 2);
 			exit(1);

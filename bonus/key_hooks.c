@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:28:43 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 22:05:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	move_right(t_vars *par)
 {
 	par->d_p = par->p_r;
+	if (par->matrix[par->y][par->x + 1] == 'G')
+		put_game_lost();
 	if (par->matrix[par->y][par->x + 1] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
@@ -37,6 +39,8 @@ void	move_right(t_vars *par)
 void	move_left(t_vars *par)
 {
 	par->d_p = par->p_l;
+	if (par->matrix[par->y][par->x - 1] == 'G')
+		put_game_lost();
 	if (par->matrix[par->y][par->x - 1] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
@@ -59,6 +63,8 @@ void	move_left(t_vars *par)
 void	move_up(t_vars *par)
 {
 	par->d_p = par->p_u;
+	if (par->matrix[par->y - 1][par->x] == 'G')
+		put_game_lost();
 	if (par->matrix[par->y - 1][par->x] == 'E' && par->data.c == 0)
 	{
 		put_game_won();
@@ -81,6 +87,8 @@ void	move_up(t_vars *par)
 void	move_down(t_vars *par)
 {
 	par->d_p = par->p_d;
+	if (par->matrix[par->y + 1][par->x] == 'G')
+		put_game_lost();
 	if (par->matrix[par->y + 1][par->x] == 'E' && par->data.c == 0)
 	{
 		put_game_won();

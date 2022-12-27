@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:31:57 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:45:19 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_data
 	int	p;
 	int	c;
 	int	e;
+	int g;
 	int	width;
 	int	height;
 }				t_data;
@@ -40,6 +41,7 @@ typedef struct s_vars
 	void	*ptr;
 	void	*win;
 	void	*wall;
+	void	*enm;
 	void	*d_p;
 	void	*p_r;
 	void	*p_u;
@@ -81,5 +83,8 @@ char	*map_len(int fd, char **lines);
 char	**read_map(int fd, t_vars *vars);
 void	*copy_map(t_vars *vars);
 void	put_game_won(void);
+void	put_game_lost(void);
+void	map_ghost(t_vars *vars, char *lines);
+void	start_helper(t_vars *params);
 
 #endif

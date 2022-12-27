@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:28:38 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:31:47 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ void	textures(t_vars *var, char c, int i, int j)
 			mlx_put_image_to_window(var->ptr, var->win,
 				var->d_o, j * var->width, i * var->width);
 	}
+	else if (c == 'G')
+	{
+		mlx_put_image_to_window(var->ptr, var->win,
+			var->enm, j * var->width, i * var->width);
+	}
+	
 }
 
 int	fill_map(t_vars *infos)
@@ -71,6 +77,13 @@ int	key_hook(int keycode, t_vars *var)
 	return (0);
 }
 
+void	start_helper(t_vars *params)
+{
+	fill_map(params);
+	mlx_hook(params->win, 2, 0, key_hook, params);
+	mlx_loop(params->ptr);
+}
+
 void	game_start(t_vars *params)
 {
 	params->ptr = mlx_init();
@@ -95,7 +108,7 @@ void	game_start(t_vars *params)
 	params->win = mlx_new_window(params->ptr,
 			ft_strlen(params->matrix[0]) * params->width,
 			map_height(params->matrix) * params->height, "so_long");
-	fill_map(params);
-	mlx_hook(params->win, 2, 0, key_hook, params);
-	mlx_loop(params->ptr);
+	params->enm = mlx_xpm_file_to_image(params->ptr,
+			"./textures/enemy.xpm", &params->width, &params->height);
+	start_helper(params);
 }

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 18:45:41 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:12:47 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char	**read_map(int fd, t_vars *vars)
 		ft_putstr_fd("empty map\n", 2);
 		exit(1);
 	}
+	map_ghost(vars,lines);
 	map_elements(vars, lines);
 	matrix = ft_split(lines, '\n');
 	vars->height = map_height(matrix);
