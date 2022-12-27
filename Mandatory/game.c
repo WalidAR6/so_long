@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 12:47:03 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:30:54 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	textures(t_vars *var, char c, int i, int j)
 {

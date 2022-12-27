@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 23:28:15 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 13:35:57 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:31:11 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 char	**surrounded_map(char **matrix)
 {

@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 16:32:42 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 22:37:45 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:31:38 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	find_path(t_vars *vars, int x, int y)
 {

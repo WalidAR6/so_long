@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 13:38:52 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:29:18 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 int	get_x_index(char **matrix, char c)
 {

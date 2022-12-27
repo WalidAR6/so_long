@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 13:48:35 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:28:43 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	move_right(t_vars *par)
 {

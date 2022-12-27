@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 13:40:45 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 14:31:57 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <mlx.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <errno.h>
 # include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
