@@ -4,6 +4,8 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = solong
 
+NAMEBNS = solong_bonus
+
 SRC = so_long.c\
 		game.c\
 		utils.c\
@@ -27,16 +29,21 @@ OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
+bonus: ${NAMEBNS}
+
 %.o: %.c
 	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
 
 ${NAME}: ${OBJ} so_long.h
 	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -g
 
+${NAMEBNS}: ${OBJ} so_long.h
+	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS} -g
+
 clean:
 	rm -f ${OBJ}
 
 fclean:
-	rm -f ${OBJ} ${NAME}
+	rm -f ${OBJ} ${NAME} ${NAMEBNS}
 
-re: fclean all
+re: fclean all bonus
