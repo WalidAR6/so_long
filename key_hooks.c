@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 22:36:14 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 12:48:01 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ void	move_right(t_vars *par)
 	else if (par->matrix[par->y][par->x + 1] != '1' &&
 		par->matrix[par->y][par->x + 1] != 'E')
 	{
+		par->moves_counter++;
 		if (par->matrix[par->y][par->x + 1] == 'C')
 			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y][par->x + 1] = 'P';
 		par->x++;
 	}
+	printf("%d\n", par->moves_counter);
 }
 
 void	move_left(t_vars *par)
@@ -42,12 +44,14 @@ void	move_left(t_vars *par)
 	else if (par->matrix[par->y][par->x - 1] != '1' &&
 		par->matrix[par->y][par->x - 1] != 'E')
 	{
+		par->moves_counter++;
 		if (par->matrix[par->y][par->x - 1] == 'C')
 			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y][par->x - 1] = 'P';
 		par->x--;
 	}
+	printf("%d\n", par->moves_counter);
 }
 
 void	move_up(t_vars *par)
@@ -61,12 +65,14 @@ void	move_up(t_vars *par)
 	else if (par->matrix[par->y - 1][par->x] != '1' &&
 		par->matrix[par->y - 1][par->x] != 'E')
 	{
+		par->moves_counter++;
 		if (par->matrix[par->y - 1][par->x] == 'C')
 			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y - 1][par->x] = 'P';
 		par->y--;
 	}
+	printf("%d\n", par->moves_counter);
 }
 
 void	move_down(t_vars *par)
@@ -80,12 +86,14 @@ void	move_down(t_vars *par)
 	else if (par->matrix[par->y + 1][par->x] != '1' &&
 		par->matrix[par->y + 1][par->x] != 'E')
 	{
+		par->moves_counter++;
 		if (par->matrix[par->y + 1][par->x] == 'C')
 			par->data.c = par->data.c - 1;
 		par->matrix[par->y][par->x] = '0';
 		par->matrix[par->y + 1][par->x] = 'P';
 		par->y++;
 	}
+	printf("%d\n", par->moves_counter);
 }
 
 void	window_exit(t_vars *par)

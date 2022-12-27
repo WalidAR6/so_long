@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 22:44:32 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 12:33:20 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_vars
 	char	**matrix;
 	char	**matrix_backup;
 	t_data	data;
+	int		moves_counter;
 }			t_vars;
 
 char	**read_map(int fd, t_vars *vars);

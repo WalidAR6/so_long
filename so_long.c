@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/26 22:54:14 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 12:40:17 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	check_main(char *av)
 		printf("error path not valid\n");
 		exit(1);
 	}
+	vars.moves_counter = 0;
 	game_start(&vars);
 	free(copy);
 	close(fd);
