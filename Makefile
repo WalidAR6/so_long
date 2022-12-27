@@ -10,16 +10,15 @@ SRC = so_long.c\
 		key_hooks.c\
 		valide_path.c\
 		so_long_utils.c\
-		inc/get_next_line/get_next_line.c\
-		inc/get_next_line/get_next_line_utils.c\
-		inc/libft/ft_strchr.c\
-		inc/libft/ft_strlen.c\
-		inc/libft/ft_strjoin.c\
-		inc/libft/ft_split.c\
-		inc/libft/ft_strlcpy.c\
-		inc/libft/ft_strdup.c\
-		inc/libft/ft_strrchr.c
-
+		get_next_line/get_next_line.c\
+		get_next_line/get_next_line_utils.c\
+		libft/ft_strchr.c\
+		libft/ft_strlen.c\
+		libft/ft_strjoin.c\
+		libft/ft_split.c\
+		libft/ft_strlcpy.c\
+		libft/ft_strdup.c\
+		libft/ft_strrchr.c
 
 OBJ = ${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 12:33:20 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 13:22:43 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <errno.h>
-# include "inc/get_next_line/get_next_line.h"
-# include "inc/libft/libft.h"
+# include "get_next_line/get_next_line.h"
+# include "libft/libft.h"
 
 # define KEY_UP 13
 # define KEY_LEFT 0
