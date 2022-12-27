@@ -56,11 +56,11 @@ bonus: ${NAMEBNS}
 %.o: %.c
 	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
 
-${NAME}: ${BOBJ} so_long.h
-	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -g
+${NAME}: ${OBJ} so_long.h
+	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -g
 
-${NAMEBNS}: ${OBJ} so_long.h
-	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS} -g
+${NAMEBNS}: ${BOBJ} so_long.h
+	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS} -g
 
 clean:
 	rm -f ${OBJ} ${BOBJ}

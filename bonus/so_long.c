@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 14:29:07 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:45:41 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_map_len(int first_line_len, char *get_lines)
 	{
 		if (ft_strlen(get_lines) != (size_t)first_line_len - 1)
 		{
-			write(2, "not the same len 1!\n", 20);
+			ft_putstr_fd("Error not the same len !\n", 2);
 			exit(1);
 		}
 	}
@@ -26,7 +26,7 @@ void	check_map_len(int first_line_len, char *get_lines)
 	{
 		if (ft_strlen(get_lines) != (size_t)first_line_len)
 		{
-			write(2, "not the same len !\n", 20);
+			ft_putstr_fd("Error not the same len !\n", 2);
 			exit(1);
 		}
 	}
