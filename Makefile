@@ -18,6 +18,9 @@ SRC = so_long.c\
 		libft/ft_split.c\
 		libft/ft_strlcpy.c\
 		libft/ft_strdup.c\
+		libft/ft_putchar_fd.c\
+		libft/ft_putstr_fd.c\
+		libft/ft_putnbr_fd.c\
 		libft/ft_strrchr.c
 
 OBJ = ${SRC:.c=.o}

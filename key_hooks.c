@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 12:48:01 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 13:48:35 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	move_right(t_vars *par)
 		par->matrix[par->y][par->x + 1] = 'P';
 		par->x++;
 	}
-	printf("%d\n", par->moves_counter);
+	ft_putnbr_fd(par->moves_counter, 1);
+	write(1, "\n", 1);
 }
 
 void	move_left(t_vars *par)
@@ -51,7 +52,8 @@ void	move_left(t_vars *par)
 		par->matrix[par->y][par->x - 1] = 'P';
 		par->x--;
 	}
-	printf("%d\n", par->moves_counter);
+	ft_putnbr_fd(par->moves_counter, 1);
+	write(1, "\n", 1);
 }
 
 void	move_up(t_vars *par)
@@ -72,7 +74,8 @@ void	move_up(t_vars *par)
 		par->matrix[par->y - 1][par->x] = 'P';
 		par->y--;
 	}
-	printf("%d\n", par->moves_counter);
+	ft_putnbr_fd(par->moves_counter, 1);
+	write(1, "\n", 1);
 }
 
 void	move_down(t_vars *par)
@@ -93,12 +96,13 @@ void	move_down(t_vars *par)
 		par->matrix[par->y + 1][par->x] = 'P';
 		par->y++;
 	}
-	printf("%d\n", par->moves_counter);
+	ft_putnbr_fd(par->moves_counter, 1);
+	write(1, "\n", 1);
 }
 
 void	window_exit(t_vars *par)
 {
-	printf("Exit\n");
+	ft_putstr_fd("Exit\n", 1);
 	mlx_destroy_window(par->ptr, par->win);
 	exit(1);
 }

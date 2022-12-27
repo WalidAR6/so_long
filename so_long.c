@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 12:40:17 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 13:32:02 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**read_map(int fd, t_vars *vars)
 	lines = map_len(fd, &lines);
 	if (!lines)
 	{
-		printf("empty map\n");
+		ft_putstr_fd("empty map\n", 2);
 		exit(1);
 	}
 	map_elements(vars, lines);
@@ -83,7 +83,7 @@ void	check_main(char *av)
 	fd = open(av, O_RDONLY);
 	if (fd < 0)
 	{
-		write(2, "file not found\n", 16);
+		ft_putstr_fd("Invalid file\n", 2);
 		exit(1);
 	}
 	vars.matrix = read_map(fd, &vars);
@@ -93,7 +93,7 @@ void	check_main(char *av)
 	find_path(&vars, vars.x, vars.y);
 	if (check_condition(&vars) == 1)
 	{
-		printf("error path not valid\n");
+		ft_putstr_fd("error path not valid\n", 2);
 		exit(1);
 	}
 	vars.moves_counter = 0;
@@ -112,7 +112,7 @@ int	main(int ac, char **av)
 		if (av[1][i] != 'r' || av[1][i - 1] != 'e' ||
 			av[1][i - 2] != 'b' || av[1][i - 3] != '.')
 		{
-			write(2, "invalid file name\n", 19);
+			ft_putstr_fd("invalid file name\n", 2);
 			exit(1);
 		}
 	}
