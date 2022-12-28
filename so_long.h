@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 18:11:56 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:30:23 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_vars
 	int		height;
 	int		x;
 	int		y;
+	int		x_g;
+	int		y_g;
 	char	**matrix;
 	char	**matrix_backup;
 	t_data	data;
@@ -88,5 +90,8 @@ void	map_ghost(t_vars *vars, char *lines);
 void	start_helper(t_vars *params);
 int		miclose(t_vars *param);
 void	win_texture(t_vars *params);
+void    move_enemy(t_vars *vars, int x, int y);
+void	get_ghost_index(t_vars *vars);
+void	start_helper(t_vars *params);
 
 #endif

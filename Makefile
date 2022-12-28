@@ -35,6 +35,7 @@ BSRC = bonus/so_long.c\
 		bonus/so_long_utils.c\
 		bonus/check_ghost.c\
 		bonus/game_status.c\
+		bonus/moving_enemy.c\
 		get_next_line/get_next_line.c\
 		get_next_line/get_next_line_utils.c\
 		libft/ft_strchr.c\

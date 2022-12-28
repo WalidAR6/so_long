@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 18:12:31 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:56:03 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	start_helper(t_vars *params)
 			ft_strlen(params->matrix[0]) * params->width,
 			map_height(params->matrix) * params->height, "so_long");
 	fill_map(params);
+	get_ghost_index(params);
 	mlx_hook(params->win, 2, 0, key_hook, params);
 	mlx_loop(params->ptr);
 }
