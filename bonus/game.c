@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 17:55:38 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:12:31 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	textures(t_vars *var, char c, int i, int j)
 		mlx_put_image_to_window(var->ptr, var->win,
 			var->enm, j * var->width, i * var->width);
 	}
-	
 }
 
 int	fill_map(t_vars *infos)
