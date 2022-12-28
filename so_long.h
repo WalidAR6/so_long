@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 22:30:23 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/28 23:47:17 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_vars
 	int		y;
 	int		x_g;
 	int		y_g;
+	int		**p;
 	char	**matrix;
 	char	**matrix_backup;
 	t_data	data;
