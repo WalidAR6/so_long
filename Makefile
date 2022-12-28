@@ -8,6 +8,7 @@ NAMEBNS = solong_bonus
 
 SRC = Mandatory/so_long.c\
 		Mandatory/game.c\
+		Mandatory/game_status.c\
 		Mandatory/utils.c\
 		Mandatory/key_hooks.c\
 		Mandatory/valide_path.c\

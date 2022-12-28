@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 19:45:19 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/28 17:46:11 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,7 @@ void	put_game_won(void);
 void	put_game_lost(void);
 void	map_ghost(t_vars *vars, char *lines);
 void	start_helper(t_vars *params);
+int		miclose(t_vars	*param);
+void	win_texture(t_vars *params);
 
 #endif

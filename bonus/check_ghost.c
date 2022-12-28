@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:07:59 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 19:15:49 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/27 22:12:00 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,4 @@ void map_ghost(t_vars *vars, char *lines)
         ft_putstr_fd("Error map element not valid\n", 2);
         exit(1);
     }
-    
-    
 }
