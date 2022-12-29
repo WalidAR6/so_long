@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 12:12:17 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:38:47 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	move_right(t_vars *par)
 {
 	par->d_p = par->p_r;
-	// move_enemy(par, par->y_g, par->x_g);
 	if (par->matrix[par->y][par->x + 1] == 'G')
 		put_game_lost();
 	if (par->matrix[par->y][par->x + 1] == 'E' && par->data.c == 0)
@@ -40,7 +39,6 @@ void	move_right(t_vars *par)
 void	move_left(t_vars *par)
 {
 	par->d_p = par->p_l;
-	// move_enemy(par, par->y_g, par->x_g);
 	if (par->matrix[par->y][par->x - 1] == 'G')
 		put_game_lost();
 	if (par->matrix[par->y][par->x - 1] == 'E' && par->data.c == 0)
@@ -65,7 +63,6 @@ void	move_left(t_vars *par)
 void	move_up(t_vars *par)
 {
 	par->d_p = par->p_u;
-	// move_enemy(par, par->y_g, par->x_g);
 	if (par->matrix[par->y - 1][par->x] == 'G')
 		put_game_lost();
 	if (par->matrix[par->y - 1][par->x] == 'E' && par->data.c == 0)
@@ -90,7 +87,6 @@ void	move_up(t_vars *par)
 void	move_down(t_vars *par)
 {
 	par->d_p = par->p_d;
-	// move_enemy(par, par->y_g, par->x_g);
 	if (par->matrix[par->y + 1][par->x] == 'G')
 		put_game_lost();
 	if (par->matrix[par->y + 1][par->x] == 'E' && par->data.c == 0)
