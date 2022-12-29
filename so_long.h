@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 17:17:28 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 19:19:08 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,7 @@ int     move_enemy(t_vars *vars, int x, int y);
 void	get_ghost_index(t_vars *vars);
 void	start_helper(t_vars *params);
 int 	fill_map(t_vars *infos);
+void    sprite_animation(t_vars *vars);
+void    sprite_texture(t_vars *vars);
 
 #endif
