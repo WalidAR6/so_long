@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 21:16:11 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 22:02:22 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,7 @@ void	start_helper(t_vars *params)
 	get_ghost_index(params);
 	sprite_texture(params);
 	mlx_hook(params->win, 2, 0, key_hook, params);
-	// mlx_loop_hook(params->ptr, sprite_animation, params);
 	mlx_loop_hook(params->ptr, move_enemy, params);
-	printf("ok\n");
 	mlx_loop(params->ptr);
 }
 

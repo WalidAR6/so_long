@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:24:53 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 17:38:47 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 22:03:41 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	move_right(t_vars *par)
 		par->matrix[par->y][par->x + 1] = 'P';
 		par->x++;
 	}
-	ft_putnbr_fd(par->moves_counter, 1);
-	write(1, "\n", 1);
 }
 
 void	move_left(t_vars *par)
@@ -56,8 +54,6 @@ void	move_left(t_vars *par)
 		par->matrix[par->y][par->x - 1] = 'P';
 		par->x--;
 	}
-	ft_putnbr_fd(par->moves_counter, 1);
-	write(1, "\n", 1);
 }
 
 void	move_up(t_vars *par)
@@ -80,8 +76,6 @@ void	move_up(t_vars *par)
 		par->matrix[par->y - 1][par->x] = 'P';
 		par->y--;
 	}
-	ft_putnbr_fd(par->moves_counter, 1);
-	write(1, "\n", 1);
 }
 
 void	move_down(t_vars *par)
@@ -104,8 +98,6 @@ void	move_down(t_vars *par)
 		par->matrix[par->y + 1][par->x] = 'P';
 		par->y++;
 	}
-	ft_putnbr_fd(par->moves_counter, 1);
-	write(1, "\n", 1);
 }
 
 void	window_exit(t_vars *par)

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:51:54 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 21:15:32 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:59:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ int    sprite_animation(t_vars *vars)
 {
     static int i = 0;
     static int pr = 0;
+    int j;
+
+    j = 0;
     mlx_clear_window(vars->ptr, vars->win);
     if(pr == 20)
     {
         vars->food = vars->animate[i % 3];
-        i++;   
+        i++;
         pr = 0;
     }
     pr++;
