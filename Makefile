@@ -26,7 +26,6 @@ SRC = Mandatory/so_long.c\
 		libft/ft_putnbr_fd.c\
 		libft/ft_strrchr.c
 
-
 BSRC = bonus/so_long.c\
 		bonus/game.c\
 		bonus/utils.c\
@@ -36,6 +35,8 @@ BSRC = bonus/so_long.c\
 		bonus/check_ghost.c\
 		bonus/game_status.c\
 		bonus/moving_enemy.c\
+		bonus/sprite_animation.c\
+		bonus/sprite_texture.c\
 		get_next_line/get_next_line.c\
 		get_next_line/get_next_line_utils.c\
 		libft/ft_strchr.c\
@@ -58,13 +59,13 @@ all: ${NAME}
 bonus: ${NAMEBNS}
 
 %.o: %.c
-	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
+	${CC} ${FLAGS} -Imlx -c $< -o $@
 
 ${NAME}: ${OBJ} so_long.h
-	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -g
+	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 ${NAMEBNS}: ${BOBJ} so_long.h
-	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS} -g
+	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS}
 
 clean:
 	rm -f ${OBJ} ${BOBJ}

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 17:17:56 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:15:44 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int    move_enemy(t_vars *vars, int x, int y)
 {
     static int tr = 0;
     static int i = 1;
-    mlx_clear_window(vars->ptr, vars->win);
+    sprite_animation(vars);
     x = vars->y_g;
     y = vars->x_g;
     if (tr == 10)
