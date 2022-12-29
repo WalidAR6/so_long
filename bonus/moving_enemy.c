@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 21:15:44 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:35:13 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,32 @@ void    get_ghost_index(t_vars *vars)
     vars->y_g = get_y_index(vars->matrix, 'G');
 }
 
-int    move_enemy(t_vars *vars, int x, int y)
+int    move_enemy(t_vars *vars, t_ghost *ghost, int x, int y)
 {
     static int tr = 0;
     static int i = 1;
     sprite_animation(vars);
-    x = vars->y_g;
-    y = vars->x_g;
+    x = vars->ghost->x;
+    y = vars->ghost->y;
     if (tr == 10)
     {
-        if (vars->matrix[x][y + i] == '1' || vars->matrix[x][y - i] == '1'
-            || vars->matrix[x][y + i] == 'C' || vars->matrix[x][y - i] == 'C'
-            || vars->matrix[x][y + i] == 'E' || vars->matrix[x][y - i] == 'E')
-            i *= -1;
-        if (vars->matrix[x][y + i] != 'C' && vars->matrix[x][y + i] != 'E'
-                && vars->matrix[x][y + i] != '1')
+        while (ghost->next != NULL)
         {
-            if (vars->matrix[x][y + i] == 'P')
-                put_game_lost();
-            vars->matrix[x][y + i] = 'G';
-            vars->matrix[x][y] = '0';
-            vars->y_g = x;
-            vars->x_g = y + i;
+            if (vars->matrix[x][y + i] == '1' || vars->matrix[x][y - i] == '1'
+                || vars->matrix[x][y + i] == 'C' || vars->matrix[x][y - i] == 'C'
+                || vars->matrix[x][y + i] == 'E' || vars->matrix[x][y - i] == 'E')
+                i *= -1;
+            if (vars->matrix[x][y + i] != 'C' && vars->matrix[x][y + i] != 'E'
+                    && vars->matrix[x][y + i] != '1')
+            {
+                if (vars->matrix[x][y + i] == 'P')
+                    put_game_lost();
+                vars->matrix[x][y + i] = 'G';
+                vars->matrix[x][y] = '0';
+                vars->y_g = x;
+                vars->x_g = y + i;
+            }
+            ghost = ghost->next;
         }
         tr = 0;
     }

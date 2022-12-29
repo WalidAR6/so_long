@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 21:01:51 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 00:34:12 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ typedef struct s_vars
 	char	**matrix_backup;
 	t_data	data;
 	int		moves_counter;
+	t_ghost	*ghost;
 }			t_vars;
+
 
 char	**read_map(int fd, t_vars *vars);
 int		same_lenght(char **matrix);
@@ -92,11 +94,13 @@ void	map_ghost(t_vars *vars, char *lines);
 void	start_helper(t_vars *params);
 int		miclose(t_vars *param);
 void	win_texture(t_vars *params);
-int     move_enemy(t_vars *vars, int x, int y);
+int     move_enemy(t_vars *vars, t_ghost *ghost, int x, int y);
 void	get_ghost_index(t_vars *vars);
 void	start_helper(t_vars *params);
 int 	fill_map(t_vars *infos);
-int    sprite_animation(t_vars *vars);
+int    	sprite_animation(t_vars *vars);
 void    sprite_texture(t_vars *vars);
+int    	how_much_g(t_vars *vars);
+void    get_position(t_vars *vars, t_ghost *ghost);
 
 #endif

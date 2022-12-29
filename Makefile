@@ -37,6 +37,7 @@ BSRC = bonus/so_long.c\
 		bonus/moving_enemy.c\
 		bonus/sprite_animation.c\
 		bonus/sprite_texture.c\
+		bonus/ghost_pos.c\
 		get_next_line/get_next_line.c\
 		get_next_line/get_next_line_utils.c\
 		libft/ft_strchr.c\
@@ -48,7 +49,11 @@ BSRC = bonus/so_long.c\
 		libft/ft_putchar_fd.c\
 		libft/ft_putstr_fd.c\
 		libft/ft_putnbr_fd.c\
-		libft/ft_strrchr.c
+		libft/ft_strrchr.c\
+		libft/ft_lstnew.c\
+		libft/ft_lstlast.c\
+		libft/ft_lstadd_back.c\
+		libft/ft_lstadd_front.c
 
 OBJ = ${SRC:.c=.o}
 
