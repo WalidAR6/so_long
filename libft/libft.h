@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:28:56 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 15:08:08 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:02:03 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 typedef struct s_ghost
 {
-	int *x;
-	int *y;
-	struct s_ghost *next;
+	int				*x;
+	int				*y;
+	struct s_ghost	*next;
 }				t_ghost;
 
 char	*ft_strchr(char *str, int c);

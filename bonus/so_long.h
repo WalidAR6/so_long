@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:46:56 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:00:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ typedef struct s_vars
 	t_ghost	*ghost;
 }			t_vars;
 
-
 char	**read_map(int fd, t_vars *vars);
 int		same_lenght(char **matrix);
 char	**surrounded_map(char **matrix);
@@ -93,14 +92,14 @@ void	put_game_lost(void);
 void	map_ghost(t_vars *vars, char *lines);
 void	start_helper(t_vars *params);
 int		miclose(t_vars *param);
-int     move_enemy(t_vars *vars, int x, int y);
+int		move_enemy(t_vars *vars, int x, int y);
 void	get_ghost_index(t_vars *vars);
 void	start_helper(t_vars *params);
-int 	fill_map(t_vars *infos);
-int    	sprite_animation(t_vars *vars);
-void    sprite_texture(t_vars *vars);
-int    	how_much_g(t_vars *vars);
-void    get_position(t_vars *vars);
+int		fill_map(t_vars *infos);
+int		sprite_animation(t_vars *vars);
+void	sprite_texture(t_vars *vars);
+int		how_much_g(t_vars *vars);
+void	get_position(t_vars *vars);
 void	printf_score(t_vars *vars);
 
 #endif

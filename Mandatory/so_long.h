@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:43:04 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:02:47 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ typedef struct s_vars
 	int		moves_counter;
 }			t_vars;
 
-
 char	**read_map(int fd, t_vars *vars);
 int		same_lenght(char **matrix);
 char	**surrounded_map(char **matrix);
@@ -83,6 +82,6 @@ void	*copy_map(t_vars *vars);
 void	put_game_won(void);
 int		miclose(t_vars *param);
 void	win_textures(t_vars *params);
-int 	fill_map(t_vars *infos);
+int		fill_map(t_vars *infos);
 
 #endif
