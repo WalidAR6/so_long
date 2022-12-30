@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moving_enemy.c                                     :+:      :+:    :+:   */
+/*   moving_enemy_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:45:58 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 20:10:39 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void    get_ghost_index(t_vars *vars)
 	vars->y_g = get_y_index(vars->matrix, 'G');
 }
 
+void	movement(t_vars vars)
+{
+	
+}
 int    move_enemy(t_vars *vars, int x, int y)
 {
 	static int tr = 0;
