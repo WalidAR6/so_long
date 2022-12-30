@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/27 19:34:38 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:50:24 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,17 @@ int	same_lenght(char **matrix)
 		i++;
 	}
 	return (j);
+}
+
+void	printf_score(t_vars *vars)
+{
+	char *moves;
+	
+	moves = ft_itoa(vars->moves_counter);
+	mlx_string_put(vars->ptr, vars->win,
+		(ft_strlen(vars->matrix[0]) * vars->width) / 2 + 32,
+		(map_height(vars->matrix) * vars->height) + 64, 0x0094FF, moves);
+	mlx_string_put(vars->ptr,vars->win,
+		(ft_strlen(vars->matrix[0]) * vars->width) / 2 + 16,
+		(map_height(vars->matrix) * vars->height) + 32, 0x0094FF, "moves");
 }

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:11:40 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 15:29:04 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:52:17 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ int    how_much_g(t_vars *vars)
 
 void    get_position(t_vars *vars)
 {
-    int mok = 0;
+    int mok;
     int i;
     int j;
-    int l = how_much_g(vars);
+    int l;
     t_ghost *head;
 
-
+    mok = 0;
+    l = how_much_g(vars);
     head = vars->ghost;
     head->x = malloc(sizeof(int)* l);
     head->y = malloc(sizeof(int)* l);

@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 15:30:08 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:50:09 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,6 @@ int	key_hook(int keycode, t_vars *var)
 		window_exit(var);
 	fill_map(var);
 	return (0);
-}
-
-void	printf_score(t_vars *vars)
-{
-	char *moves;
-	
-	moves = ft_itoa(vars->moves_counter);
-	mlx_string_put(vars->ptr, vars->win, (ft_strlen(vars->matrix[0]) * vars->width) / 2 + 32, (map_height(vars->matrix) * vars->height) + 64, 0x0094FF, moves);
-	mlx_string_put(vars->ptr, vars->win, (ft_strlen(vars->matrix[0]) * vars->width) / 2 + 16, (map_height(vars->matrix) * vars->height) + 32, 0x0094FF, "moves");
 }
 
 void	start_helper(t_vars *params)
