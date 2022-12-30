@@ -64,13 +64,13 @@ all: ${NAME}
 bonus: ${NAMEBNS}
 
 %.o: %.c
-	${CC} ${FLAGS} -Imlx -c $< -o $@
+	${CC} ${FLAGS} -Imlx -c $< -o $@ -g
 
 ${NAME}: ${OBJ} so_long.h
-	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+	${CC} ${OBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAME} -g
 
 ${NAMEBNS}: ${BOBJ} so_long.h
-	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS}
+	${CC} ${BOBJ} -lmlx -framework OpenGL -framework AppKit -o ${NAMEBNS} -g
 
 clean:
 	rm -f ${OBJ} ${BOBJ}

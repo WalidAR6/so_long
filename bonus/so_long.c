@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 18:07:48 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 02:40:44 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	check_main(char *av)
 	int		fd;
 	void	*copy;
 	t_vars	vars;
-
+	(void)av;
 	fd = open(av, O_RDONLY);
 	if (fd < 0)
 	{

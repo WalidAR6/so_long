@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 00:35:13 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 02:41:18 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ void    get_ghost_index(t_vars *vars)
     vars->y_g = get_y_index(vars->matrix, 'G');
 }
 
-int    move_enemy(t_vars *vars, t_ghost *ghost, int x, int y)
+int    move_enemy(t_vars *vars, int x, int y)
 {
     static int tr = 0;
     static int i = 1;
     sprite_animation(vars);
-    x = vars->ghost->x;
-    y = vars->ghost->y;
+    get_position(vars);
+    x = vars->ghost->y;
+    y = vars->ghost->x;
     if (tr == 10)
     {
-        while (ghost->next != NULL)
+        while (vars->ghost)
         {
             if (vars->matrix[x][y + i] == '1' || vars->matrix[x][y - i] == '1'
                 || vars->matrix[x][y + i] == 'C' || vars->matrix[x][y - i] == 'C'
@@ -43,7 +44,7 @@ int    move_enemy(t_vars *vars, t_ghost *ghost, int x, int y)
                 vars->y_g = x;
                 vars->x_g = y + i;
             }
-            ghost = ghost->next;
+            vars->ghost = vars->ghost->next;
         }
         tr = 0;
     }

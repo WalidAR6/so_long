@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 00:10:24 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 02:52:30 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ int	key_hook(int keycode, t_vars *var)
 	return (0);
 }
 
+void printf_score (t_vars *vars)
+{
+	vars->moves_counter = atoi();
+	mlx_string_put();
+}
+
 void	start_helper(t_vars *params)
 {
 	if (!params->wall || !params->d_p || !params->p_r || !params->p_u
@@ -91,7 +97,6 @@ void	start_helper(t_vars *params)
 	fill_map(params);
 	get_ghost_index(params);
 	sprite_texture(params);
-	get_position(params,params->ghost);
 	mlx_hook(params->win, 2, 0, key_hook, params);
 	mlx_loop_hook(params->ptr, move_enemy, params);
 	mlx_loop(params->ptr);
