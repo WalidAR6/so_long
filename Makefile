@@ -26,18 +26,18 @@ SRC = Mandatory/so_long.c\
 		libft/ft_putnbr_fd.c\
 		libft/ft_strrchr.c
 
-BSRC = bonus/so_long.c\
-		bonus/game.c\
-		bonus/utils.c\
-		bonus/key_hooks.c\
-		bonus/valide_path.c\
-		bonus/so_long_utils.c\
-		bonus/check_ghost.c\
-		bonus/game_status.c\
-		bonus/moving_enemy.c\
-		bonus/sprite_animation.c\
-		bonus/sprite_texture.c\
-		bonus/ghost_pos.c\
+BSRC = bonus/so_long_bonus.c\
+		bonus/game_bonus.c\
+		bonus/utils_bonus.c\
+		bonus/key_hooks_bonus.c\
+		bonus/valide_path_bonus.c\
+		bonus/so_long_utils_bonus.c\
+		bonus/check_ghost_bonus.c\
+		bonus/game_status_bonus.c\
+		bonus/moving_enemy_bonus.c\
+		bonus/sprite_animation_bonus.c\
+		bonus/sprite_texture_bonus.c\
+		bonus/ghost_pos_bonus.c\
 		get_next_line/get_next_line.c\
 		get_next_line/get_next_line_utils.c\
 		libft/ft_strchr.c\
