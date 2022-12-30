@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 13:57:48 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:43:04 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <errno.h>
-# include "get_next_line/get_next_line.h"
-# include "libft/libft.h"
+# include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 
 # define KEY_UP 13
 # define KEY_LEFT 0
@@ -31,7 +31,6 @@ typedef struct s_data
 	int	p;
 	int	c;
 	int	e;
-	int	g;
 	int	width;
 	int	height;
 }				t_data;
@@ -41,7 +40,6 @@ typedef struct s_vars
 	void	*ptr;
 	void	*win;
 	void	*wall;
-	void	*enm;
 	void	*d_p;
 	void	*p_r;
 	void	*p_u;
@@ -50,19 +48,14 @@ typedef struct s_vars
 	void	*food;
 	void	*d_o;
 	void	*d_c;
-	void	**animate;
 	int		width;
 	int		height;
 	int		x;
 	int		y;
-	int		x_g;
-	int		y_g;
-	int		**p;
 	char	**matrix;
 	char	**matrix_backup;
 	t_data	data;
 	int		moves_counter;
-	t_ghost	*ghost;
 }			t_vars;
 
 
@@ -86,22 +79,10 @@ void	look_in_sides(t_vars *vars, char **matrix);
 void	map_elements(t_vars *vars, char *lines);
 void	check_map_len(int first_line_len, char *get_lines);
 char	*map_len(int fd, char **lines);
-char	**read_map(int fd, t_vars *vars);
 void	*copy_map(t_vars *vars);
 void	put_game_won(void);
-void	put_game_lost(void);
-void	map_ghost(t_vars *vars, char *lines);
-void	start_helper(t_vars *params);
 int		miclose(t_vars *param);
-void	win_texture(t_vars *params);
-int     move_enemy(t_vars *vars, int x, int y);
-void	get_ghost_index(t_vars *vars);
-void	start_helper(t_vars *params);
+void	win_textures(t_vars *params);
 int 	fill_map(t_vars *infos);
-int    	sprite_animation(t_vars *vars);
-void    sprite_texture(t_vars *vars);
-int    	how_much_g(t_vars *vars);
-void    get_position(t_vars *vars);
-void	printf_score(t_vars *vars);
 
 #endif

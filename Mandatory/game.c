@@ -6,13 +6,13 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 17:47:32 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:43:32 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
-void	textures(t_vars *var, char c, int i, int j)
+static void	textures(t_vars *var, char c, int i, int j)
 {
 	if (c == '1')
 		mlx_put_image_to_window(var->ptr, var->win,
