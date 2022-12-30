@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:11:40 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 02:29:56 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:29:04 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,19 @@ int    how_much_g(t_vars *vars)
 
 void    get_position(t_vars *vars)
 {
+    int mok = 0;
     int i;
     int j;
-    t_ghost *new;
-    
+    int l = how_much_g(vars);
+    t_ghost *head;
+
+
+    head = vars->ghost;
+    head->x = malloc(sizeof(int)* l);
+    head->y = malloc(sizeof(int)* l);
+    if(!head->x || !head->y)
+        exit(1);
     i = 1;
-    new = NULL;
     while (vars->matrix[i])
     {
         j = 1;
@@ -49,8 +56,9 @@ void    get_position(t_vars *vars)
         {
             if (vars->matrix[i][j] == 'G')
             {
-                vars->ghost = ft_lstnew(j, i);
-                ft_lstadd_back(&vars->ghost, new);
+                head->x[mok] = i;
+                head->y[mok] = j;
+                mok++;
             }
             j++;
         }

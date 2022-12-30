@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 02:31:44 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 13:57:48 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int    	sprite_animation(t_vars *vars);
 void    sprite_texture(t_vars *vars);
 int    	how_much_g(t_vars *vars);
 void    get_position(t_vars *vars);
+void	printf_score(t_vars *vars);
 
 #endif

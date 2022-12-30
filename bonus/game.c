@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 02:52:30 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 15:30:08 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	fill_map(t_vars *infos)
 		}
 		i++;
 	}
+	printf_score(infos);
 	return (0);
 }
 
@@ -76,10 +77,13 @@ int	key_hook(int keycode, t_vars *var)
 	return (0);
 }
 
-void printf_score (t_vars *vars)
+void	printf_score(t_vars *vars)
 {
-	vars->moves_counter = atoi();
-	mlx_string_put();
+	char *moves;
+	
+	moves = ft_itoa(vars->moves_counter);
+	mlx_string_put(vars->ptr, vars->win, (ft_strlen(vars->matrix[0]) * vars->width) / 2 + 32, (map_height(vars->matrix) * vars->height) + 64, 0x0094FF, moves);
+	mlx_string_put(vars->ptr, vars->win, (ft_strlen(vars->matrix[0]) * vars->width) / 2 + 16, (map_height(vars->matrix) * vars->height) + 32, 0x0094FF, "moves");
 }
 
 void	start_helper(t_vars *params)
@@ -93,7 +97,7 @@ void	start_helper(t_vars *params)
 	}
 	params->win = mlx_new_window(params->ptr,
 			ft_strlen(params->matrix[0]) * params->width,
-			map_height(params->matrix) * params->height, "so_long");
+			map_height(params->matrix) * params->height + 128, "so_long");
 	fill_map(params);
 	get_ghost_index(params);
 	sprite_texture(params);
