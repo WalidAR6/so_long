@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.c                                             :+:      :+:    :+:   */
+/*   game_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:45:50 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:53:25 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	start_helper(t_vars *params)
 	get_ghost_index(params);
 	sprite_texture(params);
 	mlx_hook(params->win, 2, 0, key_hook, params);
+	mlx_hook(params->win, 17, 0, miclose, params);
 	mlx_loop_hook(params->ptr, move_enemy, params);
 	mlx_loop(params->ptr);
 }

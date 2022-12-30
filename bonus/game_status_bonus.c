@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_status.c                                      :+:      :+:    :+:   */
+/*   game_status_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:34:23 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:45:47 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:53:44 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ void	put_game_lost(void)
 	ft_putstr_fd("  888oo88  o888ooooo88   88ooo88   o88oooo888     o888o    \n",
 		1);
 	exit(1);
+}
+
+int	miclose(t_vars	*param)
+{
+	mlx_destroy_window(param->ptr, param->win);
+	exit(0);
+	return (0);
 }
