@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:34:23 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 18:13:48 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:45:47 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	put_game_won(void)
 {

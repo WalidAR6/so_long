@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:11:40 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 15:52:17 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:45:53 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int    how_much_g(t_vars *vars)
 {

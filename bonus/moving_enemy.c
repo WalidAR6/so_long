@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 16:04:06 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:45:58 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void    get_ghost_index(t_vars *vars)
 {

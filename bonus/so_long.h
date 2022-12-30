@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long copy.h                                     :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:26:14 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:46:56 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	put_game_lost(void);
 void	map_ghost(t_vars *vars, char *lines);
 void	start_helper(t_vars *params);
 int		miclose(t_vars *param);
-void	win_texture(t_vars *params);
 int     move_enemy(t_vars *vars, int x, int y);
 void	get_ghost_index(t_vars *vars);
 void	start_helper(t_vars *params);

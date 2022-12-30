@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:17:56 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 22:01:20 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:46:10 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void    sprite_texture(t_vars *vars)
 {

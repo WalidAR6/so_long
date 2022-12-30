@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 19:07:59 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/28 18:11:26 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:45:44 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	map_ghost(t_vars *vars, char *lines)
 {

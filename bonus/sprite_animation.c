@@ -6,11 +6,11 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:51:54 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/29 21:59:49 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/30 19:46:08 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int    sprite_animation(t_vars *vars)
 {
