@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:28:56 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/31 22:50:10 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 15:46:23 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef struct s_ghost
-{
-	int				*x;
-	int				*y;
-	struct s_ghost	*next;
-}				t_ghost;
 
 char	*ft_strchr(char *str, int c);
 char	*ft_strjoin(char *s1, char *s2);

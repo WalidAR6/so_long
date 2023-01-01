@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2023/01/01 00:56:51 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:06:59 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	start_helper(t_vars *params)
 		|| !params->p_d || !params->p_l || !params->food || !params->d_c
 		|| !params->d_o || !params->enm || !params->ptr)
 	{
-		printf("Error textures\n");
+		ft_putstr_fd("Error map textures", 2);
 		exit(1);
 	}
 	params->win = mlx_new_window(params->ptr,

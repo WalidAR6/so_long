@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:17:56 by waraissi          #+#    #+#             */
-/*   Updated: 2023/01/01 00:40:11 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:02:40 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	sprite_texture(t_vars *vars)
 	if (!vars->animate[0] || !vars->animate[1] || !vars->animate[2])
 	{
 		free(vars->animate);
-		printf("Error textures\n");
+		ft_putstr_fd("Error textures\n", 2);
 	}
-	
 }

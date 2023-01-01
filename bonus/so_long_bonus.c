@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2023/01/01 02:06:19 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:10:54 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,23 +100,6 @@ void	check_main(char *av)
 	}
 	vars.moves_counter = 0;
 	game_start(&vars);
-	// {
-	// 	int x = 0;
-	// 	int y = 0;
-	// 	while (vars.matrix[x][y])
-	// 	{
-	// 		y = 0;
-	// 		while (vars.matrix[x][y])
-	// 		{
-	// 			free(vars.matrix[x][y]);
-	// 			y++;
-	// 			/* code */
-	// 		}
-	// 		x++;
-	// 	}
-	// 	free(vars.matrix);
-	// }
-	while(1);
 }
 
 int	main(int ac, char **av)

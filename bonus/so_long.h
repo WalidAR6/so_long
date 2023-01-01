@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/31 23:37:21 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 15:46:34 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,42 +36,48 @@ typedef struct s_data
 	int	height;
 }				t_data;
 
+typedef struct s_ghost
+{
+	int				*x;
+	int				*y;
+	struct s_ghost	*next;
+}				t_ghost;
+
 typedef struct s_g_collect
 {
-    void					*pointer;
-    struct s_g_collect		*next;
+	void					*pointer;
+	struct s_g_collect		*next;
 }							t_g_collect;
 
 typedef struct s_vars
 {
-	void	*ptr;
-	void	*win;
-	void	*wall;
-	void	*enm;
-	void	*d_p;
-	void	*p_r;
-	void	*p_u;
-	void	*p_d;
-	void	*p_l;
-	void	*food;
-	void	*d_o;
-	void	*d_c;
-	void	**animate;
-	int		width;
-	int		height;
-	int		x;
-	int		y;
-	int		x_g;
-	int		y_g;
-	int		**p;
-	char	**matrix;
-	char	**matrix_backup;
-	t_data	data;
-	int		moves_counter;
-	t_ghost	*ghost;
+	void		*ptr;
+	void		*win;
+	void		*wall;
+	void		*enm;
+	void		*d_p;
+	void		*p_r;
+	void		*p_u;
+	void		*p_d;
+	void		*p_l;
+	void		*food;
+	void		*d_o;
+	void		*d_c;
+	void		**animate;
+	int			width;
+	int			height;
+	int			x;
+	int			y;
+	int			x_g;
+	int			y_g;
+	int			**p;
+	char		**matrix;
+	char		**matrix_backup;
+	t_data		data;
+	int			moves_counter;
+	t_ghost		*ghost;
 	t_g_collect	*collect;
 }			t_vars;
-
 
 char	**read_map(int fd, t_vars *vars);
 int		same_lenght(char **matrix);

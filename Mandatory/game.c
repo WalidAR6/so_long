@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 20:14:29 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 19:48:07 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:02:58 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	win_textures(t_vars *params)
 		|| !params->p_d || !params->p_l || !params->food || !params->d_c
 		|| !params->d_o || !params->ptr)
 	{
-		printf("Error textures\n");
+		ft_putstr_fd("Error textures\n", 2);
 		exit(1);
 	}
 }
