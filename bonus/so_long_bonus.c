@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2023/01/01 16:43:53 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 17:09:49 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	check_map_len(int first_line_len, char *get_lines)
 {
+	printf("%zu, %d\n",ft_strlen(get_lines), first_line_len);
 	if (get_lines[ft_strlen(get_lines) - 1] != '\n')
 	{
 		if (ft_strlen(get_lines) != (size_t)first_line_len - 1)
 		{
-			ft_putstr_fd("Error not the same len !\n", 2);
+			ft_putstr_fd("Error not the same len 1 !\n", 2);
 			exit(1);
 		}
 	}
