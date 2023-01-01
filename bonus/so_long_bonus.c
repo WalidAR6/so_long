@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2023/01/01 16:10:54 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:43:53 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,13 @@ void	check_map_len(int first_line_len, char *get_lines)
 	}
 }
 
-char	*map_len(int fd, char **lines)
+char	*map_len(int fd, char *lines)
 {
 	int		n_l;
 	int		first_line_len;
 	char	*get_lines;
 
 	n_l = -1;
-	*lines = NULL;
 	while (1)
 	{
 		get_lines = get_next_line(fd);
@@ -50,9 +49,9 @@ char	*map_len(int fd, char **lines)
 		else
 			n_l++;
 		check_map_len(first_line_len, get_lines);
-		*lines = ft_strjoin(*lines, get_lines);
+		lines = ft_strjoin(lines, get_lines);
 	}
-	return (*lines);
+	return (lines);
 }
 
 char	**read_map(int fd, t_vars *vars)
@@ -60,7 +59,8 @@ char	**read_map(int fd, t_vars *vars)
 	char	*lines;
 	char	**matrix;
 
-	lines = map_len(fd, &lines);
+	lines = NULL;
+	lines = map_len(fd, lines);
 	if (!lines)
 	{
 		ft_putstr_fd("empty map\n", 2);
