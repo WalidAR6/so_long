@@ -50,11 +50,7 @@ BSRC = bonus/so_long_bonus.c\
 		libft/ft_putstr_fd.c\
 		libft/ft_putnbr_fd.c\
 		libft/ft_strrchr.c\
-		libft/ft_itoa.c\
-		libft/ft_lstnew.c\
-		libft/ft_lstlast.c\
-		libft/ft_lstadd_back.c\
-		libft/ft_lstadd_front.c
+		libft/ft_itoa.c
 
 OBJ = ${SRC:.c=.o}
 

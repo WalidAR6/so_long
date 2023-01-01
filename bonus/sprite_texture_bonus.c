@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 19:17:56 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 20:05:47 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 00:40:11 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,10 @@ void	sprite_texture(t_vars *vars)
 	vars->animate[1] = vars->food;
 	vars->animate[2] = mlx_xpm_file_to_image(vars->ptr,
 			"./textures/food/food_3.xpm", &vars->width, &vars->height);
+	if (!vars->animate[0] || !vars->animate[1] || !vars->animate[2])
+	{
+		free(vars->animate);
+		printf("Error textures\n");
+	}
+	
 }

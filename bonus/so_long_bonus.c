@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 17:52:19 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 20:03:44 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 02:06:19 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,11 @@ void	check_main(char *av)
 		exit(1);
 	}
 	vars.matrix = read_map(fd, &vars);
-	copy = copy_map(&vars);
 	vars.x = get_x_index(vars.matrix, 'P');
 	vars.y = get_y_index(vars.matrix, 'P');
+	copy = copy_map(&vars);
 	find_path(&vars, vars.x, vars.y);
+	close(fd);
 	if (check_condition(&vars) == 1)
 	{
 		ft_putstr_fd("error path not valid\n", 2);
@@ -99,8 +100,23 @@ void	check_main(char *av)
 	}
 	vars.moves_counter = 0;
 	game_start(&vars);
-	free(copy);
-	close(fd);
+	// {
+	// 	int x = 0;
+	// 	int y = 0;
+	// 	while (vars.matrix[x][y])
+	// 	{
+	// 		y = 0;
+	// 		while (vars.matrix[x][y])
+	// 		{
+	// 			free(vars.matrix[x][y]);
+	// 			y++;
+	// 			/* code */
+	// 		}
+	// 		x++;
+	// 	}
+	// 	free(vars.matrix);
+	// }
+	while(1);
 }
 
 int	main(int ac, char **av)

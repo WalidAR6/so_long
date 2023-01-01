@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 17:37:06 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 23:00:49 by waraissi         ###   ########.fr       */
+/*   Updated: 2022/12/31 23:37:21 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ typedef struct s_data
 	int	height;
 }				t_data;
 
+typedef struct s_g_collect
+{
+    void					*pointer;
+    struct s_g_collect		*next;
+}							t_g_collect;
+
 typedef struct s_vars
 {
 	void	*ptr;
@@ -63,7 +69,9 @@ typedef struct s_vars
 	t_data	data;
 	int		moves_counter;
 	t_ghost	*ghost;
+	t_g_collect	*collect;
 }			t_vars;
+
 
 char	**read_map(int fd, t_vars *vars);
 int		same_lenght(char **matrix);
@@ -96,7 +104,7 @@ int		move_enemy(t_vars *vars, int x, int y);
 void	get_ghost_index(t_vars *vars);
 void	start_helper(t_vars *params);
 int		fill_map(t_vars *infos);
-int		sprite_animation(t_vars *vars);
+void	sprite_animation(t_vars *vars);
 void	sprite_texture(t_vars *vars);
 int		how_much_g(t_vars *vars);
 void	get_position(t_vars *vars);

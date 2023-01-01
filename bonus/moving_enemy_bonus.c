@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 18:27:02 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 22:59:35 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 02:22:20 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	movement(t_vars *vars, int mok, int i)
 	int	l;
 
 	l = how_much_g(vars);
-	get_position(vars);
+	// get_position(vars);
 	x = vars->ghost->x[mok % l];
 	y = vars->ghost->y[mok % l];
 	if (vars->matrix[x][y + i] != 'C' && vars->matrix[x][y + i] != 'E'
@@ -64,6 +64,8 @@ int	move_enemy(t_vars *vars, int x, int y)
 		mok++;
 	}
 	tr++;
+	free(vars->ghost->x);
+	free(vars->ghost->y);
 	fill_map(vars);
 	return (0);
 }

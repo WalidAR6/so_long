@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 22:11:40 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 20:02:42 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 02:11:04 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	how_much_g(t_vars *vars)
 	return (count);
 }
 
-static void	store(t_vars *vars, t_ghost *head)
+static void	store(t_vars *vars)
 {
 	int		mok;
 	int		i;
@@ -49,8 +49,8 @@ static void	store(t_vars *vars, t_ghost *head)
 		{
 			if (vars->matrix[i][j] == 'G')
 			{
-				head->x[mok] = i;
-				head->y[mok] = j;
+				vars->ghost->x[mok] = i;
+				vars->ghost->y[mok] = j;
 				mok++;
 			}
 			j++;
@@ -62,13 +62,9 @@ static void	store(t_vars *vars, t_ghost *head)
 void	get_position(t_vars *vars)
 {
 	int		l;
-	t_ghost	*head;
 
 	l = how_much_g(vars);
-	head = vars->ghost;
-	head->x = malloc(sizeof(int) * l);
-	head->y = malloc(sizeof(int) * l);
-	if (!head->x || !head->y)
-		exit(1);
-	store(vars, head);
+	vars->ghost->x = malloc(sizeof(int) * l);
+	vars->ghost->y = malloc(sizeof(int) * l);
+	store(vars);
 }

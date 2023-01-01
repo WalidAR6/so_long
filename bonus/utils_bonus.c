@@ -6,7 +6,7 @@
 /*   By: waraissi <waraissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:47:03 by waraissi          #+#    #+#             */
-/*   Updated: 2022/12/30 20:06:27 by waraissi         ###   ########.fr       */
+/*   Updated: 2023/01/01 00:45:43 by waraissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,5 @@ void	printf_score(t_vars *vars)
 	mlx_string_put(vars->ptr, vars->win,
 		(ft_strlen(vars->matrix[0]) * vars->width) / 2 + 16,
 		(map_height(vars->matrix) * vars->height) + 32, 0x0094FF, "moves");
+	free(moves);
 }
